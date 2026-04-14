@@ -1,0 +1,9 @@
+{
+  "title": "HYSPLIT Plume ConvLSTM Multiyear Dataset (2024-2026)",
+  "id": "daviddulovic/hysplit-plume-convlstm-multiyear-2024-2026",
+  "licenses": [
+    {
+      "name": "CC0-1.0"
+    }
+  ]
+}

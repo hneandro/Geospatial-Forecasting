@@ -1,0 +1,15 @@
+{
+  "dataset_handle": "daviddulovic/hysplit-plume-convlstm-multiyear-2024-2026",
+  "version_notes": "Initial release: 10,000 HYSPLIT multiyear scenarios with 40,215 ConvLSTM-ready windows.",
+  "num_scenarios": 10000,
+  "num_windows": 40215,
+  "grid_shape": [
+    64,
+    64
+  ],
+  "window_definition": {
+    "input_frames": 3,
+    "target_frames": 1,
+    "channels": 1
+  }
+}
