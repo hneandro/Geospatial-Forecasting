@@ -1,6 +1,6 @@
 {
   "dataset_handle": "daviddulovic/hysplit-plume-convlstm-multiyear-2024-2026",
-  "version_notes": "Initial release: 10,000 HYSPLIT multiyear scenarios with 40,215 ConvLSTM-ready windows.",
+  "version_notes": "Added GDAS-enriched meteorology channels to the ConvLSTM dataset: u10m, v10m, wind speed, wind direction sin/cos, boundary layer height, surface pressure, relative humidity, and 2m temperature.",
   "num_scenarios": 10000,
   "num_windows": 40215,
   "grid_shape": [
@@ -10,6 +10,18 @@
   "window_definition": {
     "input_frames": 3,
     "target_frames": 1,
-    "channels": 1
+    "channels": 10,
+    "channel_order": [
+      "plume_concentration",
+      "u10m_ms",
+      "v10m_ms",
+      "wspd10_ms",
+      "wdir_sin",
+      "wdir_cos",
+      "pblh_m",
+      "sfcp_hpa",
+      "rh2m_pct",
+      "t02m_k"
+    ]
   }
 }
