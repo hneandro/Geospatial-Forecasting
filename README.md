@@ -84,6 +84,13 @@ python scripts/run_demo_forecast.py
 python scripts/export_geojson.py
 ```
 
+### Train learned plume model from EDA data
+```bash
+python scripts/train_plume_ml.py --max-samples 8000
+```
+
+The training script loads windows from `EDA/data/windows`, extracts plume and meteorology features, trains a regression model, and saves a pickle artifact at `scripts/trained_plume_model.pkl`.
+
 ### Seed deterministic demo payloads
 ```bash
 python scripts/seed_demo_data.py
