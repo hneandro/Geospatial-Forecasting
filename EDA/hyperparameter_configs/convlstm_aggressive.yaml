@@ -1,0 +1,36 @@
+description: Higher capacity. For sufficient GPU memory, seeking best accuracy.
+data:
+  batch_size: 64
+  val_split: 0.15
+  test_split: 0.1
+  shuffle_buffer: 20000
+model:
+  architecture: Option C
+  hidden_channels:
+  - 96
+  - 192
+  - 128
+  kernel_size: 3
+  padding: same
+  dropout_spatial: 0.15
+  dropout_temporal: 0.1
+  weight_decay: 5.0e-05
+optimizer:
+  name: Adam
+  beta_1: 0.9
+  beta_2: 0.999
+  epsilon: 1.0e-07
+  learning_rate: 0.002
+  warmup_steps: 200
+  decay_strategy: exponential
+  decay_rate: 0.96
+  decay_steps: 5000
+training:
+  loss: hybrid_mse_mae
+  loss_weights:
+  - 0.6
+  - 0.4
+  grad_clip_norm: 1.0
+  max_epochs: 100
+  early_stopping_patience: 5
+  early_stopping_min_delta: 1.0e-05

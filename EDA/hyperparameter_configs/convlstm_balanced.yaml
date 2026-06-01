@@ -1,0 +1,34 @@
+description: Recommended starting point. Good accuracy, stable training.
+data:
+  batch_size: 32
+  val_split: 0.15
+  test_split: 0.1
+  shuffle_buffer: 10000
+model:
+  architecture: Option B
+  hidden_channels:
+  - 64
+  - 128
+  - 64
+  kernel_size: 3
+  padding: same
+  dropout_spatial: 0.2
+  dropout_temporal: 0.15
+  weight_decay: 1.0e-05
+optimizer:
+  name: Adam
+  beta_1: 0.9
+  beta_2: 0.999
+  epsilon: 1.0e-07
+  learning_rate: 0.001
+  warmup_steps: 1000
+  decay_strategy: cosine
+training:
+  loss: hybrid_mse_mae
+  loss_weights:
+  - 0.7
+  - 0.3
+  grad_clip_norm: 1.0
+  max_epochs: 100
+  early_stopping_patience: 7
+  early_stopping_min_delta: 1.0e-05
